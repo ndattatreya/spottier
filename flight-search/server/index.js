@@ -36,6 +36,11 @@ async function getToken() {
   return token;
 }
 
+app.get("/", (req, res) => {
+  res.status(200).send("Flight Search Backend is running");
+});
+
+
 app.get("/api/flights", async (req, res) => {
   try {
     const accessToken = await getToken();
